@@ -1,0 +1,26 @@
+import mysql.connector
+
+# Connect to the database
+cnx = mysql.connector.connect(
+    host="HOST",
+    user="USERNAME",
+    password="PASSWORD",
+    database="DATABASE"
+)
+
+# Create a cursor
+cursor = cnx.cursor()
+
+# Execute a query
+cursor.execute("SELECT * FROM table")
+
+# Fetch all results
+results = cursor.fetchall()
+
+# Print the results
+for result in results:
+    print(result)
+
+# Close the cursor and connection
+cursor.close()
+cnx.close()
